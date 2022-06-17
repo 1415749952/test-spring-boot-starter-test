@@ -1,0 +1,57 @@
+spring:
+  profiles:
+    active: dev #开发环境配置
+  datasource:
+    druid:
+      connect-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+      exception-sorter: true
+      filters: stat,wall,log4j
+      initial-size: 10
+      max-active: 100
+      max-pool-prepared-statement-per-connection-size: 20
+      max-wait: 20000
+      min-evictable-idle-time-millis: 30000
+      min-idle: 10
+      pool-prepared-statements: true
+      stat-view-servlet:
+        enabled: true
+        login-username: admin
+        login-password: 123456
+        allow:
+      test-on-borrow: false
+      test-on-return: false
+      test-while-idle: true
+      time-between-eviction-runs-millis: 20000
+      use-global-data-source-stat: true
+  jackson:
+    serialization:
+      write-dates-as-timestamps: true #统一返回时间格式为时间戳
+    generator:
+      writeNumbersAsStrings: true #所有数字都变成字符串,包括long和int类型,防止前端数字类型精度丢失
+
+jwt:
+  access-token-expiration: 14400
+  access-token-header: accessToken
+  access-token-prefix: access-
+  access-token-secret: access-secret
+  refresh-token-expiration: 604800
+  refresh-token-header: refreshToken
+  refresh-token-prefix: refresh-
+  refresh-token-secret: refresh-secret
+  ant-matchers: /oauth/login,/oauth/login/captchaImage,/web/test/**,
+
+mybatis-plus:
+  configuration:
+    cache-enabled: false
+    jdbc-type-for-null: 'null'
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      logic-delete-value: 2
+      logic-not-delete-value: 0
+  #指定mapper.xml位置
+  #mapper-locations: classpath*:mapper/**/*Mapper.xml
+
+# 日志配置文件
+logging:
+  config: classpath:logback-spring.xml
