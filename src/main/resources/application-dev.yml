@@ -21,6 +21,12 @@ spring:
           url: jdbc:oracle:thin:@oracle-dev:1521/orcl
           username: sys
           password: 123456
+  redis:
+    database: 0
+    port: 6379
+    host: redis-dev
+    password:
+    timeout: 5000
   # 查询时间数据 数据库和返回数据相差8个小时
   jackson:
     time-zone: GMT+8

@@ -28,6 +28,8 @@ spring:
       write-dates-as-timestamps: true #统一返回时间格式为时间戳
     generator:
       writeNumbersAsStrings: true #所有数字都变成字符串,包括long和int类型,防止前端数字类型精度丢失
+  cache:
+    type: redis
 
 jwt:
   access-token-expiration: 14400
