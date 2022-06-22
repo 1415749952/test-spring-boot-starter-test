@@ -1,7 +1,7 @@
-package com.example.springbootstartertest.security.service.impl;
+package com.example.springbootstartertest.service.impl;
 
-import com.example.springbootstartertest.security.mapper.SecurityMapper;
-import com.example.springbootstartertest.security.service.SecurityService;
+import com.example.springbootstartertest.mapper.SecurityMapper;
+import com.example.springbootstartertest.service.SecurityService;
 import com.reststyle.security.model.SecurityRole;
 import com.reststyle.security.model.SecurityUser;
 import com.reststyle.security.utils.SecurityUtils;

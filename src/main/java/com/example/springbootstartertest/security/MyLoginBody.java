@@ -12,8 +12,8 @@ package com.example.springbootstartertest.security;
 public class MyLoginBody
 {
 
-    private String name;
-    private String psd;
+    private String username;
+    private String password;
     /**
      * 验证码
      */
@@ -28,32 +28,32 @@ public class MyLoginBody
     {
     }
 
-    public MyLoginBody(String name, String psd, String code, String uuid)
+    public MyLoginBody(String username, String password, String code, String uuid)
     {
-        this.name = name;
-        this.psd = psd;
+        this.username = username;
+        this.password = password;
         this.code = code;
         this.uuid = uuid;
     }
 
-    public String getName()
+    public String getUsername()
     {
-        return name;
+        return username;
     }
 
-    public void setName(String name)
+    public void setUsername(String username)
     {
-        this.name = name;
+        this.username = username;
     }
 
-    public String getPsd()
+    public String getPassword()
     {
-        return psd;
+        return password;
     }
 
-    public void setPsd(String psd)
+    public void setPassword(String password)
     {
-        this.psd = psd;
+        this.password = password;
     }
 
     public String getCode()
@@ -80,8 +80,8 @@ public class MyLoginBody
     public String toString()
     {
         return "MyLoginBody{" +
-                "name='" + name + '\'' +
-                ", psd='" + psd + '\'' +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
                 ", code='" + code + '\'' +
                 ", uuid='" + uuid + '\'' +
                 '}';

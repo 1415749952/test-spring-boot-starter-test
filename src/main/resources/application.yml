@@ -1,6 +1,9 @@
 spring:
   profiles:
     active: dev #开发环境配置
+  mvc:
+    servlet:
+      load-on-startup: 1
   datasource:
     druid:
       connect-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
@@ -49,8 +52,9 @@ mybatis-plus:
     map-underscore-to-camel-case: true
   global-config:
     db-config:
-      logic-delete-value: 2
+      logic-delete-value: 1
       logic-not-delete-value: 0
+      logic-delete-field: del_flag
   #指定mapper.xml位置
   #mapper-locations: classpath*:mapper/**/*Mapper.xml
 

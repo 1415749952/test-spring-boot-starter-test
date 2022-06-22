@@ -1,6 +1,7 @@
 package com.example.springbootstartertest.security;
 
-import com.example.springbootstartertest.security.service.SecurityService;
+import com.example.springbootstartertest.service.SecurityService;
+import com.reststyle.redis.utils.RedisUtils;
 import com.reststyle.security.model.SecurityAuthority;
 import com.reststyle.security.model.SecurityRole;
 import com.reststyle.security.model.SecurityUser;
@@ -36,6 +37,9 @@ public class JwtSecurityServiceImpl implements JwtSecurityService
     @Autowired
     private SecurityService securityService;
 
+    @Autowired
+    private RedisUtils redisUtils;
+
     @Override
     public AccountInfo checkLoginInfo(InputStream loginBody)
     {
@@ -45,11 +49,11 @@ public class JwtSecurityServiceImpl implements JwtSecurityService
         {
             throw new BadCredentialsException("登录信息输入为空");
         }
-        if (StringUtils.isBlank(body.getName()))
+        if (StringUtils.isBlank(body.getUsername()))
         {
             throw new BadCredentialsException("用户名为空");
         }
-        if (StringUtils.isBlank(body.getPsd()))
+        if (StringUtils.isBlank(body.getPassword()))
         {
             throw new BadCredentialsException("密码为空");
         }
@@ -63,7 +67,7 @@ public class JwtSecurityServiceImpl implements JwtSecurityService
         }
         //校验验证码
 
-        return new AccountInfo(body.getName(), body.getPsd());
+        return new AccountInfo(body.getUsername(), body.getPassword());
     }
 
     @Override

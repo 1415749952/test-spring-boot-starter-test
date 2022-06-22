@@ -25,7 +25,7 @@ public class TestController
         System.out.println("/webApp/test/a");
     }
     @GetMapping("/test/permission")
-    @PreAuthorize("hasAuthority('system:user:list222')")
+    @PreAuthorize("hasAuthority('system:user:list:test')")
     public void testPermission()
     {
         System.out.println("/webApp/test/a");

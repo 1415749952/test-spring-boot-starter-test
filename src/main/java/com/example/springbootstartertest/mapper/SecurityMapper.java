@@ -1,4 +1,4 @@
-package com.example.springbootstartertest.security.mapper;
+package com.example.springbootstartertest.mapper;
 
 import com.reststyle.security.model.SecurityRole;
 import com.reststyle.security.model.SecurityUser;

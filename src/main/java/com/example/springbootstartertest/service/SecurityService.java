@@ -1,4 +1,4 @@
-package com.example.springbootstartertest.security.service;
+package com.example.springbootstartertest.service;
 
 import com.reststyle.security.model.SecurityRole;
 import com.reststyle.security.model.SecurityUser;
