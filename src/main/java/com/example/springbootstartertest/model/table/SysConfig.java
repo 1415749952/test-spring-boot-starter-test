@@ -9,16 +9,12 @@ import java.util.Date;
 
 /**
  * Created with IntelliJ IDEA.
- * Description:
+ * Description: 参数配置表
  *
  * @version 1.0
  * @author: TheFei
  * @Date: 2022-06-22
  * @Time: 13:25
- */
-
-/**
- * 参数配置表
  */
 @TableName(value = "sys_config")
 public class SysConfig
