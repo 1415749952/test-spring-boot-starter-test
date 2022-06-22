@@ -59,7 +59,11 @@ public class SecurityServiceImpl implements SecurityService
         }
         else
         {
-            Set<Long> roleIds = Optional.ofNullable(user.getSecurityRoles()).orElse(new ArrayList<>()).stream().map(SecurityRole::getRoleId).collect(Collectors.toSet());
+            Set<Long> roleIds = Optional.ofNullable(user.getSecurityRoles())
+                                        .orElse(new ArrayList<>())
+                                        .stream()
+                                        .map(SecurityRole::getRoleId)
+                                        .collect(Collectors.toSet());
             menuList = securityMapper.selectMenuPermsByRoleIds(roleIds);
         }
         return menuList;
